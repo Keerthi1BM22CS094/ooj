@@ -1,0 +1,128 @@
+// File: CIE/Student.java
+package CIE;
+
+public class Student {
+    protected String usn;
+    protected String name;
+    protected int sem;
+
+    public Student(String usn, String name, int sem) {
+        this.usn = usn;
+        this.name = name;
+        this.sem = sem;
+    }
+}
+
+
+// File: CIE/Internals.java
+package CIE;
+
+public class Internals extends Student {
+    protected int[] internalMarks = new int[5];
+
+    public Internals(String usn, String name, int sem, int[] internalMarks) {
+        super(usn, name, sem);
+        this.internalMarks = internalMarks;
+    }
+}
+
+// File: SEE/External.java
+package SEE;
+import CIE.*;
+
+public class External extends Student {
+    protected int[] externalMarks = new int[5];
+
+    public External(String usn, String name, int sem, int[] externalMarks) {
+        super(usn, name, sem);
+        this.externalMarks = externalMarks;
+    }
+}
+
+// File: Main.java
+import CIE.*;
+import SEE.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Example usage
+        // Internal marks for student 1
+        int[] internalMarks1 = {80, 75, 85, 90, 88};
+        Internals student1Internal = new Internals("1MS16CS001", "Alice", 3, internalMarks1);
+        
+        // External marks for student 1
+        int[] externalMarks1 = {70, 68, 75, 80, 72};
+        External student1External = new External("1MS16CS001", "Alice", 3, externalMarks1);
+        
+        // Display final marks for student 1
+        System.out.println("Student 1 Final Marks:");
+        for (int i = 0; i < 5; i++) {
+            int finalMarks = student1Internal.internalMarks[i] + student1External.externalMarks[i];
+            System.out.println("Course " + (i + 1) + ": " + finalMarks);
+        }
+    }
+}
+// File: CIE/Student.java
+package CIE;
+
+public class Student {
+    protected String usn;
+    protected String name;
+    protected int sem;
+
+    public Student(String usn, String name, int sem) {
+        this.usn = usn;
+        this.name = name;
+        this.sem = sem;
+    }
+}
+
+
+// File: CIE/Internals.java
+package CIE;
+
+public class Internals extends Student {
+    protected int[] internalMarks = new int[5];
+
+    public Internals(String usn, String name, int sem, int[] internalMarks) {
+        super(usn, name, sem);
+        this.internalMarks = internalMarks;
+    }
+}
+
+// File: SEE/External.java
+package SEE;
+import CIE.*;
+
+public class External extends Student {
+    protected int[] externalMarks = new int[5];
+
+    public External(String usn, String name, int sem, int[] externalMarks) {
+        super(usn, name, sem);
+        this.externalMarks = externalMarks;
+    }
+}
+
+// File: Main.java
+import CIE.*;
+import SEE.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Example usage
+        // Internal marks for student 1
+        int[] internalMarks1 = {80, 75, 85, 90, 88};
+        Internals student1Internal = new Internals("1MS16CS001", "Alice", 3, internalMarks1);
+        
+        // External marks for student 1
+        int[] externalMarks1 = {70, 68, 75, 80, 72};
+        External student1External = new External("1MS16CS001", "Alice", 3, externalMarks1);
+        
+        // Display final marks for student 1
+        System.out.println("Student 1 Final Marks:");
+        for (int i = 0; i < 5; i++) {
+            int finalMarks = student1Internal.internalMarks[i] + student1External.externalMarks[i];
+            System.out.println("Course " + (i + 1) + ": " + finalMarks);
+        }
+    }
+}
